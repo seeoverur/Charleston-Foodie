@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charleston Foodie | All-Day Breakfast in Downtown Charleston, SC</title>
+  <meta name="description" content="A local guide to all-day breakfast in downtown Charleston, SC, sorted by neighborhood, with what to order at each stop and where to stay for brunch or lunch.">
+  <link rel="canonical" href="https://charleston-foodie.com/">
+  <meta property="og:title" content="The Downtown Charleston Guide to All-Day Breakfast">
+  <meta property="og:description" content="Where to eat breakfast at any hour on the Charleston peninsula, from Upper King to South of Broad.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://charleston-foodie.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+/* Charleston-Foodie.com — shared styles (loads after Bootstrap 5) */
+:root {
+  --cf-black: #000;
+  --cf-red: #c8102e;
+  --cf-ink: #111;
+  --cf-rule: #e4e4e4;
+}
+
+body {
+  font-family: "Lato", Arial, sans-serif;
+  color: var(--cf-ink);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  background: #fff;
+}
+
+/* Header */
+.cf-topbar {
+  background: var(--cf-black);
+  color: #fff;
+  font-size: .95rem;
+  padding: .6rem 0 0;
+}
+.cf-topbar .cf-tag strong { font-weight: 900; }
+.cf-logo {
+  display: inline-block;
+  background: var(--cf-red);
+  color: #fff;
+  border: 3px solid #fff;
+  padding: .3rem .9rem .35rem;
+  transform: rotate(-4deg);
+  text-decoration: none;
+  line-height: 1;
+  text-align: center;
+}
+.cf-logo small {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.cf-logo span {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.cf-logo:hover { color: #fff; }
+
+.cf-nav { background: var(--cf-black); }
+.cf-nav .nav-link {
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  font-size: 1.05rem;
+  padding: 1rem 1.5rem;
+}
+.cf-nav .nav-link:hover,
+.cf-nav .nav-link.active { color: #fff; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 3px; text-decoration-color: var(--cf-red); }
+.cf-nav .navbar-toggler { border-color: #fff; }
+.cf-nav .navbar-toggler-icon { filter: invert(1); }
+
+/* Article */
+.cf-article { max-width: 860px; }
+.cf-back {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--cf-ink);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.cf-back:hover { text-decoration: underline; }
+
+h1.cf-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+  line-height: 1.15;
+  letter-spacing: -.01em;
+  margin: 2.5rem 0 1rem;
+}
+.cf-byline { font-size: 1rem; line-height: 1.3; margin-bottom: 2.5rem; }
+.cf-note { font-style: italic; }
+
+.cf-article h2 {
+  font-weight: 900;
+  font-size: 2.1rem;
+  margin: 2.75rem 0 1rem;
+}
+.cf-article h3 {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.45rem;
+  margin: 2rem 0 .9rem;
+}
+.cf-article a {
+  color: var(--cf-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.cf-article a:hover { color: var(--cf-red); }
+.cf-addr { margin-bottom: .9rem; }
+.cf-order strong { font-style: italic; font-weight: 900; }
+
+/* Featured pick */
+.cf-feature {
+  border: 3px solid var(--cf-black);
+  padding: 1.75rem 1.75rem 1.25rem;
+  margin: 2rem 0 2.5rem;
+  position: relative;
+}
+.cf-feature .cf-flag {
+  position: absolute;
+  top: -1rem;
+  left: 1.25rem;
+  background: var(--cf-red);
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  padding: .3rem .75rem;
+}
+.cf-feature h3 { margin-top: .25rem; }
+.cf-btn {
+  display: inline-block;
+  background: var(--cf-black);
+  color: #fff !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: .7rem 1.4rem;
+  font-size: .95rem;
+  letter-spacing: .04em;
+}
+.cf-btn:hover { background: var(--cf-red); }
+
+.cf-rule { border: 0; border-top: 1px solid var(--cf-rule); margin: 3rem 0; opacity: 1; }
+
+/* Footer */
+.cf-footer {
+  background: var(--cf-black);
+  color: #fff;
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  font-size: .95rem;
+}
+.cf-footer a { color: #fff; font-weight: 900; text-transform: uppercase; text-decoration: none; margin-right: 1.5rem; }
+.cf-footer a:hover { text-decoration: underline; }
+.cf-footer p { color: #bdbdbd; margin: 1rem 0 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Downtown Charleston Guide to All-Day Breakfast",
+    "dateModified": "2026-11-11",
+    "author": { "@type": "Organization", "name": "Charleston Foodie" },
+    "publisher": { "@type": "Organization", "name": "Charleston Foodie", "url": "https://charleston-foodie.com/" },
+    "mainEntityOfPage": "https://charleston-foodie.com/"
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="cf-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="cf-tag d-none d-md-block"><strong>Breakfast</strong> all day &nbsp;|&nbsp; <strong>Brunch</strong> &amp; <strong>Lunch</strong> downtown</div>
+      <a class="cf-logo mx-auto mx-md-0" href="index.html"><small>Charleston</small><span>Foodie</span></a>
+      <div class="cf-tag d-none d-md-block">Charleston, South Carolina</div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md cf-nav">
+    <div class="container">
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#cfNav" aria-controls="cfNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="cfNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">All-Day Breakfast</a></li>
+          <li class="nav-item"><a class="nav-link" href="breakfast-lunch.html">Breakfast &amp; Lunch</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="container cf-article py-5">
+
+  <h1 class="cf-title">The Downtown Charleston Guide to All-Day Breakfast</h1>
+  <div class="cf-byline">By the Charleston Foodie Team</div>
+
+  <p class="cf-note">Editor's Note: Restaurants are grouped by neighborhood, north to south along the peninsula. Hours change with the season, so check each restaurant's site before you go.</p>
+
+  <p>Charleston does not make you choose between sleeping in and eating eggs. A good share of the peninsula's morning kitchens keep the griddle going well past noon, which means a hot <a href="https://calliesbiscuits.com/">biscuit</a>, a <a href="https://sweetpalmcoffee.com/">breakfast burrito</a>, or a plate of <a href="https://millersallday.com/">grits</a> is on the table whenever you get there. These are the downtown spots we send people to, with what to order at each. If the morning runs long, our <a href="breakfast-lunch.html">breakfast and lunch page</a> covers brunch plates and midday orders at the same addresses.</p>
+
+  <h2>Upper King &amp; Marion Square</h2>
+
+  <h3>1. <a href="https://calliesbiscuits.com/">Callie's Hot Little Biscuit</a></h3>
+  <p class="cf-addr">476 1/2 King St, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> This counter-only storefront is about as wide as a hallway and turns out handmade buttermilk biscuits until it closes in the afternoon. Get a country ham biscuit, a pimento cheese sandwich, and a cinnamon biscuit for the walk. There is a line most mornings and it moves quickly.</p>
+
+  <h3>2. <a href="https://sweetpalmcoffee.com/">Sweet Palm Coffee</a></h3>
+  <p class="cf-addr">471 King St, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> The breakfast burrito and an iced latte topped with cold foam. Pastries cover the early crowd, and the chicken Caesar wrap is the order regulars come back for once the morning turns into lunch. Dirty sodas and sundaes are there for anyone who wants breakfast to end on something sweet.</p>
+  <p>This stretch of Upper King is the densest block of daytime food on the peninsula, and Sweet Palm Coffee sits in the middle of it. Callie's is directly across the street, Bodega is around the corner on Ann Street, and The Daily is a few blocks north. Marion Square is a short walk south, where the Charleston Farmers Market sets up on Saturdays in season with produce stands, bakers, and prepared-food vendors. The College of Charleston is close enough that the morning line is half students and half visitors.</p>
+  <p>What sets the cafe apart from its neighbors is range. The biscuit counters and sandwich shops nearby each do one thing well. Sweet Palm runs a full espresso bar and a food menu that works at 8 a.m. and at 2 p.m., so it suits a group where one person wants coffee and a pastry, another wants a real breakfast, and a third has already moved on to lunch. Service at the counter is quick, there is room to sit, and the food travels well if you are carrying it down King Street.</p>
+  <p>It also works as a base for the rest of the day. The shopping blocks of Middle King start just south of Calhoun Street, the dinner restaurants of Upper King open a few doors away in the evening, and nearly every other stop on this list is within a fifteen-minute walk.</p>
+
+  <h3>3. <a href="https://www.bodegachs.com/">Bodega</a></h3>
+  <p class="cf-addr">23 Ann St, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> New York-style breakfast sandwiches on kaiser rolls baked in-house, served inside an 1850 train depot a block off King. The Bodega Classic is egg, white American cheese, and your choice of bacon, Taylor ham, or sausage. The menu also runs to benedicts, pancakes, and deli sandwiches, so half the table can order lunch.</p>
+
+  <h3>4. <a href="https://shopthedaily.com/">The Daily</a></h3>
+  <p class="cf-addr">652 B King St, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> A neighborhood market and coffee counter at the top of King Street. The avocado toast is the standard, the breakfast sandwiches travel well, and the smoothies and cold-pressed juices make it the lightest stop on this list. It is also the first good coffee you pass coming off I-26 onto the peninsula.</p>
+
+  <h2>Westside</h2>
+
+  <h3>5. <a href="https://dapsbreakfast.com/">Daps Breakfast &amp; Imbibe</a></h3>
+  <p class="cf-addr">280 Ashley Ave, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> A corner breakfast shop that treats the morning menu as a place to have fun. The Fruity Pebble pancakes and the Cinnamon Toast Crunch sticky bun get the attention, and the Big Meaty Hash is what to order if you actually want to be full. Mimosas come on tap. Daps closes mid-afternoon and takes a midweek day off, so check before you walk over.</p>
+
+  <h2>Eastside</h2>
+
+  <h3>6. <a href="http://www.mercandmash.com/">Mercantile and Mash</a></h3>
+  <p class="cf-addr">701 East Bay St, Charleston, SC 29403</p>
+  <p class="cf-order"><strong>What to order:</strong> A food hall and cafe inside the old Cigar Factory, with its own parking lot, which matters more than it should downtown. Breakfast is served all day here. Order the breakfast wrap or the Buffalo chicken biscuit, and add the avocado tartine if you are sharing.</p>
+
+  <h2>Lower King &amp; South of Broad</h2>
+
+  <h3>7. <a href="https://millersallday.com/">Millers All Day</a></h3>
+  <p class="cf-addr">120 King St, Charleston, SC 29401</p>
+  <p class="cf-order"><strong>What to order:</strong> The sit-down option near Broad Street, co-founded by the miller behind Geechie Boy grits. That is your cue: order anything with grits, then the fried chicken biscuit or biscuits and gravy, and split a cinnamon roll for the table. There is a full espresso bar and a cocktail list for anyone treating this as brunch.</p>
+
+  <hr class="cf-rule">
+
+</main>
+
+<footer class="cf-footer">
+  <div class="container">
+    <a href="index.html">All-Day Breakfast</a>
+    <a href="breakfast-lunch.html">Breakfast &amp; Lunch</a>
+    <a href="about.html">About</a>
+    <p>&copy; 2026 Charleston-Foodie.com. Menus and hours change; confirm details with each restaurant.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
